@@ -1,0 +1,51 @@
+@import '../../sass/conf/conf';
+
+.clickable-font {
+  color: $primary !important;
+  cursor: pointer !important;
+
+  &:hover {
+    color: $primary-hover !important;
+  }
+
+  &:focus {
+    color: $primary-focus !important;
+  }
+
+  &:disabled {
+    color: $primary-disabled !important;
+    cursor: not-allowed
+  }
+}
+
+.underline-font {
+  color: $primary !important;
+  cursor: pointer;
+
+  &:hover {
+    color: $primary-hover !important;
+    border-bottom: 1px solid $primary-hover;
+  }
+
+  &:active {
+    color: $primary-focus !important;
+    border-bottom: 1px solid $primary-focus;
+  }
+
+  &:visited {
+    color: $primary !important;
+  }
+}
+
+.colorful-font {
+  color: $primary;
+  cursor: pointer;
+
+  &:hover {
+    color: $primary-hover;
+  }
+
+  &:focus {
+    color: $primary-focus;
+  }
+}

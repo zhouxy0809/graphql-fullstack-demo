@@ -1,0 +1,40 @@
+@import '../../sass/conf/conf';
+
+.ant-radio-button-wrapper-disabled.ant-radio-button-wrapper-checked {
+  color: transparent($default-text, 0.25);
+  // background-color: #F5F5F5;
+}
+
+.ant-radio-button-wrapper {
+  margin-right: 0 !important;
+}
+
+.custom-radio-group {
+  .ant-radio-button-wrapper {
+    border-radius: 0;
+    width: 140px;
+    height: 31px;
+    padding: 0;
+    text-align: center;
+
+    &:first-child:last-child {
+      border-radius: 0;
+    }
+
+    span {
+      font-size: 12px;
+    }
+  }
+
+  .ant-radio-button-wrapper-checked {
+    background-color: transparent($primary, 0.098);
+    border-color: $primary;
+    color: $primary;
+  }
+
+  .ant-radio-button-wrapper-disabled {
+    background-color: #F2F2F2;
+    border-color: #949494;
+    color: #AEAEAE;
+  }
+}

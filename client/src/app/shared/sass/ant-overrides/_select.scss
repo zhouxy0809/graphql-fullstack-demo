@@ -1,0 +1,71 @@
+@import '../../sass/conf/conf';
+
+.resource-unit,
+.project-info-body-breadcrumb {
+  .ant-select-selection {
+    border: none;
+    box-shadow: 0 0 0 2px transparent($default, 0.2) !important;
+
+    &:hover {
+      border-color: $default !important;
+      box-shadow: 0 0 0 2px transparent($default, 0.2) !important;
+    }
+
+    &:focus {
+      border-color: $default !important;
+      box-shadow: 0 0 0 2px transparent($default, 0.2) !important;
+    }
+
+    &:active {
+      border-color: $default !important;
+      box-shadow: 0 0 0 2px transparent($default, 0.2) !important;
+    }
+
+    &:visited {
+      border-color: $default !important;
+      box-shadow: 0 0 0 2px transparent($default, 0.2) !important;
+    }
+  }
+}
+
+
+.project-list-dropdown-container {
+  font-size: 12px;
+
+  .ant-select-dropdown-menu-vertical::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  .ant-select-dropdown-menu-vertical::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 0px transparent($primary, 0.4);
+    background: transparent($primary, 0.4);
+  }
+
+  .ant-select-dropdown-menu-vertical::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 0px transparent($primary, 0.4);
+    background: transparent($primary, 0.1);
+  }
+
+  .create-project-label {
+    padding: 8px;
+    cursor: pointer;
+    color: $primary;
+
+    &:hover {
+      color: $primary-hover;
+    }
+
+    &:focus {
+      color: $primary-focus;
+    }
+  }
+}
+
+.ant-select-dropdown.ant-select-dropdown--multiple .ant-select-dropdown-menu-item:hover .ant-select-selected-icon {
+  color: #cfd1d3;
+}
+
+.ant-select-dropdown.ant-select-dropdown--multiple .ant-select-dropdown-menu-item-selected .ant-select-selected-icon,
+.ant-select-dropdown.ant-select-dropdown--multiple .ant-select-dropdown-menu-item-selected:hover .ant-select-selected-icon {
+  color: #1890ff !important;
+}

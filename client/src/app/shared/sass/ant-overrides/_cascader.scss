@@ -1,0 +1,13 @@
+@import '../../sass/conf/conf';
+.ant-cascader-picker:hover .ant-cascader-input {
+  border-color: $primary;
+}
+
+.ant-cascader-picker-disabled {
+  &:hover, &:focus {
+    .ant-cascader-input-disabled {
+      border-color: $divider;
+      box-shadow: none;
+    }
+  }
+}

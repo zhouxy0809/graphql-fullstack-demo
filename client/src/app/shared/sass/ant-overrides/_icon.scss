@@ -1,0 +1,26 @@
+.project-name-container,
+.task-title-name {
+  .anticon-edit {
+    margin-left: 11px;
+    font-size: 20px;
+    color: $primary;
+    cursor: pointer;
+
+    &:hover {
+      color: $primary-hover;
+    }
+
+    &:focus {
+      color: $primary-focus;
+    }
+  }
+
+  .edit-diabled {
+    color: $primary-disabled;
+    cursor: not-allowed;
+
+    &:hover {
+      color: $primary-disabled;
+    }
+  }
+}

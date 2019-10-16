@@ -1,0 +1,13 @@
+overwrite: true
+schema: 
+  -  http://127.0.0.1:8080/graphql:
+      headers:
+        Authorization: Basic YWRtaW46U2pfMTIzNDU2
+generates:
+  src/app/graphql/generated/graphql.ts:
+    documents: 
+      src/app/graphql/operations/*.graphql
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-apollo-angular"

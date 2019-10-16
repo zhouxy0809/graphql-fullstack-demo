@@ -1,0 +1,13 @@
+<tr>
+  <th nzShowCheckbox *ngIf="options.showCheckbox" 
+    [(nzChecked)]="allChecked" 
+    [nzIndeterminate]="indeterminate" 
+    (nzCheckedChange)="checkAll($event)">
+  </th>
+  <th *ngFor="let column of columns">
+    {{column.label}}
+  </th>
+  <th *ngIf="actions">
+    操作
+  </th>
+</tr>

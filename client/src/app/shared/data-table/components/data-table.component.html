@@ -1,0 +1,21 @@
+<div class="data-table">
+  <data-table-body
+    [rows]="rows"
+    [columns]="model.columns"
+    [actions]="model.actions"
+    [(checked)]="checked"
+    [checkedProp]="checkedProp"
+    [disabled]="disabled"
+    [isSpinning]="isSpinning"
+    [networkException]="networkException"
+    [options]="options">
+  </data-table-body>
+  <data-table-footer *ngIf="options.showPagination"
+    [pagination]="model.pagination"
+    [pageInfo]="pageInfo"
+    [options]="options"
+    [isSpinning]="isSpinning"
+    [networkException]="networkException"
+    [reset]="reset">
+  </data-table-footer>
+</div>

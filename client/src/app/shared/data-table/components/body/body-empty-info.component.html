@@ -1,0 +1,14 @@
+<nz-empty *ngIf="!networkException" class="custom-empty-status"
+  [nzNotFoundImage]="'./assets/images/empty-status/u1540.png'"
+  [nzNotFoundContent]="emptyContentTpl">
+  <ng-template #emptyContentTpl>
+    <span>当前列表没有内容！</span>
+  </ng-template>
+</nz-empty>
+<nz-empty *ngIf="networkException" class="custom-empty-status"
+  [nzNotFoundImage]="'./assets/images/network-exception/unknown-exception.png'"
+  [nzNotFoundContent]="emptyContentTpl">
+  <ng-template #emptyContentTpl>
+    <span>网络异常，请刷新重试</span>
+  </ng-template>
+</nz-empty>

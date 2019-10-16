@@ -1,0 +1,161 @@
+@import "../shared/sass/conf/conf";
+
+$header-height: 50px;
+$menu-item-width: 85px;
+$menu-sub-item-width: $menu-item-width;
+$menu-border-top-hover-color: #00F;
+$menu-bg-hover-color: rgba(255, 255, 255, 0.2);
+$menu-border-top-width: 6px;
+$menu-border-bottom-width: $menu-border-top-width;
+
+.al-body {
+  height: 100%;
+  min-height: 500px;
+  min-width: 992px
+}
+
+.al-header {
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  transition: all 0.5s ease;
+  width: 100%;
+  height: $header-height;
+  background-color: $page-header-background-color;
+  line-height: $header-height;
+
+  .anticon-bars {
+    font-size: 22px;
+    margin-top: 14px;
+  }
+
+  .logo {
+    width: 220px;
+    padding-left: 20px;
+
+    >a {
+      color: #fff;
+    }
+
+    .chinamobile-logo {
+      max-width: 28px;
+      height: auto;
+      margin-right: 16px;
+    }
+
+    .platform-name {
+      margin-right: 20px;
+      font-family: 'MicrosoftYaHeiLight', 'Microsoft YaHei Light', 'Microsoft YaHei';
+      font-weight: 200;
+      font-size: 18px;
+    }
+
+    .current-page-name {
+      font-family: 'MicrosoftYaHeiLight', '微软雅黑 Light', '微软雅黑';
+      font-weight: 200;
+      font-size: 16px;
+    }
+  }
+
+  .ant-divider-vertical {
+    margin: 0 20px;
+    height: 20px;
+    top: 15px;
+  }
+}
+
+.login-person {
+  color: $default !important;
+  flex: 1;
+  text-align: right;
+
+  .login-person-name-arrow {
+    font-size: 12px;
+  }
+
+  &:hover {
+    .login-person-name-arrow {
+      color: $page-header-dropdown-font-color !important;
+    }
+  }
+}
+
+.al-main {
+  // padding-top: calc(#{$page-header-height});
+  padding-top: $page-header-height;
+  min-width: 100%;
+  position: relative;
+  background: #fff;
+  height: 100%
+}
+
+.login-person-dropdown {
+  background-color: $page-header-background-color;
+  border-radius: 0;
+  top: 12px;
+  padding: 10px 0;
+
+  .ant-dropdown-menu-item-selected,
+  .ant-dropdown-menu-item-selected .dropdown-name {
+    background-color: $page-header-background-color;
+  }
+
+  .ant-dropdown-menu-item-selected .dropdown-name {
+    &:hover {
+      background-color: $menu-bg-hover-color;
+    }
+  }
+
+  .ant-dropdown-menu-item {
+    padding: 9px 50px;
+    margin-bottom: 0;
+
+    a {
+      color: $default;
+      font-size: 12px;
+    }
+
+    &:hover {
+      background-color: $primary;
+    }
+  }
+}
+
+::ng-deep {
+  .horizontal-menu-list {
+    background-color: $page-header-background-color;
+    border-bottom: none;
+
+    .ant-menu-item,
+    .ant-menu-submenu-title {
+      padding: 0;
+    }
+
+    .ant-menu-item,
+    .ant-menu-submenu {
+      color: $default;
+      width: $menu-item-width;
+      text-align: center;
+      margin-right: 35px;
+
+      >a {
+        color: $default;
+      }
+
+      &:hover {
+        color: $primary;
+        border-bottom: 2px solid transparent;
+      }
+    }
+
+    .ant-menu-item-selected,
+    .ant-menu-submenu-selected {
+      color: $primary;
+      border-bottom: 2px solid transparent;
+
+      >a {
+        color: $primary;
+      }
+    }
+  }
+}

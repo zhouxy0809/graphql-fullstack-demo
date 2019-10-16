@@ -1,0 +1,67 @@
+<div class="data-table-body">
+  <nz-table
+    [nzData]="rows"
+    [nzLoading]="isSpinning"
+    [nzScroll]="{x: options.actionsFrozenRight ? options.actionsFrozenScrollRatio: '100%'}"
+    [nzNoResult]="customEmptyTpl"
+    nzShowPagination="false">
+    <thead>
+      <tr>
+        <th nzShowCheckbox *ngIf="options.showCheckbox" [(nzChecked)]="allChecked" [nzIndeterminate]="indeterminate"
+          (nzCheckedChange)="checkAll($event)">
+        </th>
+        <ng-template ngFor let-column [ngForOf]="columns">
+          <ng-container *ngIf="!column.hidden">
+            <th *ngIf="!column.headerFn else headerFn" [nzWidth]="column.width">
+              <ng-template #renderTitle
+                [ngTemplateOutlet]="column._renderTitle"
+                [ngTemplateOutletContext]="{$implicit: column}">
+              </ng-template>
+              <ng-container *ngIf="!column._renderTitle; else renderTitle">
+                {{column.label}}
+              </ng-container>
+            </th>
+            <ng-template #headerFn>
+              <th [nzWidth]="column.width" (click)="column.headerFn(column)">
+                {{column.label}}
+              </th>
+            </ng-template>
+          </ng-container>
+        </ng-template>
+        <!-- actions -->
+        <ng-container *ngIf="actions">
+          <th *ngIf="options.actionsWidth" [nzWidth]="options.actionsWidth">操作</th>
+          <th *ngIf="options.actionsFrozenRight" [nzWidth]="options.actionsFrozenRightWidth" nzRight="0px">操作</th>
+          <th *ngIf="!options.actionsWidth && !options.actionsFrozenRight">操作</th>
+        </ng-container>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-template ngFor let-row let-$index="index" [ngForOf]="rows" [ngForTrackBy]="trackByIdentity">
+        <tr>
+          <td nzShowCheckbox *ngIf="options.showCheckbox" [(nzChecked)]="row.checked" [nzDisabled]="row.$$disabled"
+            (nzCheckedChange)="refreshStatus($event)"></td>
+          <ng-container *ngFor="let column of columns">
+            <td *ngIf="!column.hidden">
+              <data-table-body-cell [row]="row" [rowIndex]="$index + 1" [column]="column">
+              </data-table-body-cell>
+            </td>
+          </ng-container>
+          <!-- actions -->
+          <td class="actions" *ngIf="actions && options.actionsFrozenRight" nzRight="0px">
+            <data-table-body-action [row]="row" [actions]="actions">
+            </data-table-body-action>
+          </td>
+          <td class="actions" *ngIf="actions && !options.actionsFrozenRight">
+            <data-table-body-action [row]="row" [actions]="actions">
+            </data-table-body-action>
+          </td>
+        </tr>
+      </ng-template>
+    </tbody>
+  </nz-table>
+</div>
+<ng-template #customEmptyTpl>
+  <app-body-empty-info [networkException]="networkException">
+  </app-body-empty-info>
+</ng-template>

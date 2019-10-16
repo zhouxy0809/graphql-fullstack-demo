@@ -1,0 +1,52 @@
+$primary-disabled: #CCC !default;
+// table
+$table-th-height: 48px;
+$table-td-height: 48px;
+$table-th-font-size: 13px;
+$table-td-font-size: 13px;
+$table-th-font-color: #3C3E4A;
+$table-td-font-color: #3C3E4A;
+
+.data-table {
+  .forbid-click {
+    color: $primary-disabled !important;
+    cursor: not-allowed !important;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      border-bottom: none !important;
+    }
+  }
+
+  table {
+    table-layout: fixed;
+
+    td:not(.actions) {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  .ant-table-thead>tr>th,
+  .ant-table-tbody>tr>td {
+    padding: 0px 16px;
+  }
+
+  .ant-table-thead>tr>th {
+    height: $table-th-height;
+    font-size: $table-th-font-size;
+    color: $table-th-font-color;
+  }
+
+  .ant-table-tbody>tr>td {
+    height: $table-td-height;
+    font-size: $table-td-font-size;
+    color: $table-td-font-color;
+  }
+
+  .ant-tag {
+    border-radius: 30px;
+  }
+}

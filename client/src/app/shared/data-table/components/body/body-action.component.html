@@ -1,0 +1,35 @@
+<ng-container *ngFor="let action of actions;let $index = index;">
+  <ng-container [ngSwitch]="isDefinedFunc(action.typeFn) ? action.typeFn(row) : action.type">
+    <ng-container *ngSwitchCase="'text'">
+      <a href="javascript:void(0)"
+        [ngClass]="{'forbid-click': isDisabled(action, row)}" 
+        (click)="!isDisabled(action, row) ? isDefinedFunc(action.clickFn) && action.clickFn(row) : disabledClick">{{action.label}}</a>
+    </ng-container>
+    <ng-container *ngSwitchCase="'icon'">
+      <a href="javascript:void(0)"
+        [ngClass]="{'forbid-click': isDisabled(action, row)}" 
+        (click)="!isDisabled(action, row) ? isDefinedFunc(action.clickFn) && action.clickFn(row) : disabledClick">        <i nz-icon [type]="action.iconType" theme="outline"></i>
+      </a>
+    </ng-container>
+    <ng-container *ngSwitchCase="'pop'">
+      <ng-container *ngIf="action.popOptions as pop">
+        <ng-container *ngIf="isDisabled(action, row); else popClickable">
+          <a href="javascript:void(0)" class="forbid-click" >{{action.label}}</a>
+        </ng-container>
+        <ng-template #popClickable>
+          <a href="javascript:void(0)" style="margin-left: -4px"
+            nz-popconfirm
+            [nzTitle]="pop.title || pop.getTitleFn(row)"
+            [nzOkText]="pop.okText"
+            [nzCancelText]="pop.cancelText" 
+            (nzOnConfirm)="pop.confirmFn(row)"
+            (nzOnCancel)="pop.cancelFn(row)"
+            nzPlacement="topLeft">
+            {{action.label}}
+          </a>
+        </ng-template>
+      </ng-container>
+    </ng-container>
+  </ng-container>
+  <nz-divider *ngIf="$index !== actions.length - 1" nzType="vertical"></nz-divider>
+</ng-container>

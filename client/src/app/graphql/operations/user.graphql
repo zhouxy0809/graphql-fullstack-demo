@@ -1,0 +1,46 @@
+query userInfoQuery($id: ID!) {
+  user(id: $id) {
+    ...UserInfo
+  }
+}
+
+query usersQuery ($offset: Int, $limit: Int) {
+  users (offset: $offset, limit: $limit) {
+    ...UserInfo
+  }
+}
+
+query usersByCursorQuery ($cursor: String, $limit: Int) {
+  usersByCursor (cursor: $cursor, limit: $limit) {
+    pageInfo {
+      ...PageInfo
+    }
+    nodes {
+      ...UserInfo
+    }
+  }
+}
+
+query usersCountQuery($cursor: String, $limit: Int) {
+  usersByCursor (cursor: $cursor, limit: $limit) {
+    totalCount
+  }
+}
+
+mutation createUserMutation($username: String!, $email: String!, $password: String!) {
+  createUser(username: $username, email: $email, password: $password) {
+    ...UserInfo
+  }
+}
+
+mutation updateUserMutation($username: String!) {
+  updateUser(username: $username) {
+    ...UserInfo
+  }
+}
+
+mutation deleteUserMutation($id: ID!) {
+  deleteUser(id: $id) {
+    ...UserInfo
+  }
+}

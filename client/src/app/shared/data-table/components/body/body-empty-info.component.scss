@@ -1,0 +1,18 @@
+:host ::ng-deep {
+  .custom-empty-status {
+    margin: 31px 8px 50px 8px;
+
+    .ant-empty-image {
+      height: 191px;
+      margin-bottom: 10px;
+    }
+
+    .ant-empty-description {
+      span {
+        font-size: 14px;
+        color: #333;
+        padding-left: 30px;
+      }
+    }
+  }
+}

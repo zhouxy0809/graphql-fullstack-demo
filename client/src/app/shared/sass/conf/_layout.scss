@@ -1,0 +1,96 @@
+html {
+  position: relative;
+  min-width: 320px;
+  font-size: 14px;
+}
+
+body {
+  overflow: hidden;
+  overflow-y: auto !important;
+}
+
+html,
+body {
+  height: 100%;
+  min-width: $resMin;
+}
+
+main {
+  height: 100%;
+  position: relative;
+  font: 14px/16px $font-family;
+  color: $default-text;
+
+  .additional-bg {
+    display: none; // @include additional-bg();
+  }
+}
+
+.project-mgt-list,
+.project-info-body,
+.model-mgt-list,
+.image-mgt-list,
+.user-mgt-list,
+.group-mgt-list,
+.org-mgt-list,
+.service-mgt-list {
+  position: relative;
+  width: 100%;
+  top: 0px;
+  bottom: 0px;
+  padding: 20px 30px 30px 30px;
+}
+
+.model-version-operate,
+.service-operate,
+.user-detail,
+.group-operate {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  background: $main-grey-background;
+}
+
+.model-version-operate-header,
+.group-operate-header,
+.service-operate-header {
+  box-shadow: 0px 2px 2px #E5E5E5;
+}
+
+.form-operation-container {
+  height: 52px;
+  padding: 0 30px;
+
+  .form-operation {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid $divider;
+    padding-top: 20px;
+
+    .confirm-button {
+      margin-left: 12px;
+    }
+  }
+}
+
+.break-word {
+  word-wrap: break-word;
+}
+
+.required::before {
+  margin-right: 4px;
+  content: "*";
+  font-family: SimSun;
+  line-height: 1;
+  font-size: 14px;
+  color: #f5222d;
+  display: inline-block;
+}
+
+.required-input {
+  border-color: #f5222d;
+}
+
+input .ng-invalid .ng-touched {
+  border: 1px solid red;
+}

@@ -1,0 +1,12 @@
+  <!-- [isSpinning]="isSpinning" -->
+<div style="padding: 40px;">
+  <button nz-button nzType="primary" 
+    (click)="showAddUserModal()">新建用户
+  </button>
+  <data-table
+    [isSpinning]="user.isSpinning"
+    [rows]="user.rows" 
+    [pageInfo]="user.pageInfo" 
+    [model]="user.model">
+  </data-table>
+</div>

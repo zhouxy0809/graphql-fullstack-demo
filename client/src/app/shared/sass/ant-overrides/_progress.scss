@@ -1,0 +1,43 @@
+.org-mgt-list .group-mgt-list {
+  .ant-progress-text {
+    font-size: 18px;
+    font-family: 'MicrosoftYaHei', '微软雅黑';
+    font-weight: 400;
+  }
+}
+
+#resource-info-item-id-0 {
+  .ant-progress-circle-path {
+    stroke: $resource-info-0;
+  }
+  .ant-progress-text {
+    color: $resource-info-0;
+  }
+}
+
+#resource-info-item-id-1 {
+  .ant-progress-circle-path {
+    stroke: $resource-info-1;
+  }
+  .ant-progress-text {
+    color: $resource-info-1;
+  }
+}
+
+#resource-info-item-id-2 {
+  .ant-progress-circle-path {
+    stroke: $resource-info-2;
+  }
+  .ant-progress-text {
+    color: $resource-info-2;
+  }
+}
+
+#resource-info-item-id-3 {
+  .ant-progress-circle-path {
+    stroke: $resource-info-3;
+  }
+  .ant-progress-text {
+    color: $resource-info-3;
+  }
+}

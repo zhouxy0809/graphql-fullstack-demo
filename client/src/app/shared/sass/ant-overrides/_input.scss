@@ -1,0 +1,32 @@
+@import '../../sass/conf/conf';
+
+.ant-input {
+  border-color: $divider;
+
+  &:hover {
+    border-color: $divider;
+  }
+
+  &:focus {
+    border-color: $primary;
+    box-shadow: 0 0 0 2px $input-box-shadow;
+  }
+}
+
+.readonly-input {
+  background-color: $input-background-disabled;
+
+  &:focus {
+    border-color: $divider !important;
+    box-shadow: none !important;
+  }
+}
+
+.file-name-input {
+  .ant-input {
+    padding-right: 76px !important;
+  }
+  .ant-input-suffix {
+    color: #CCC;
+  }
+}

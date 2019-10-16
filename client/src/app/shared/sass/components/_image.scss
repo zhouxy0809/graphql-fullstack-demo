@@ -1,0 +1,11 @@
+.image-control {
+  .ant-form-item-children {
+    display: inline-block;
+    width: 100%;
+
+    .image-select-container {
+      display: inline-flex;
+      width: 100%;
+    }
+  }
+}

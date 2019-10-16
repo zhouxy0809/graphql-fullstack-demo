@@ -1,0 +1,21 @@
+<div class="data-table-footer" *ngIf="!networkException && !(hideOnSinglePage || isSpinning)">
+  <div class="total">
+    共<span style="margin: 0 4px;">{{totalCount}}</span>条，当前显示：{{showCurrentDataRange()}}条
+  </div>
+  <div class="pageSize" *ngIf="options.showPageSize">
+    <span>每页显示</span>
+    <nz-select class="pageSizeSelect" [(ngModel)]="pageSize" (ngModelChange)="onPageSizeChange($event)">
+      <nz-option *ngFor="let option of pageSizeOptions" [nzValue]="option" [nzLabel]="option">
+      </nz-option>
+    </nz-select>
+    <span>条</span>
+  </div>
+  <div class="pagination">
+    <button nz-button nzType="default" [disabled]="!hasPreviousPage" (click)="jumpPre()">
+      <i nz-icon type="left" theme="outline"></i>
+    </button>
+    <button nz-button nzType="default" [disabled]="!hasNextPage" (click)="jumpNext()">
+      <i nz-icon type="right" theme="outline"></i>
+    </button>
+  </div>
+</div>

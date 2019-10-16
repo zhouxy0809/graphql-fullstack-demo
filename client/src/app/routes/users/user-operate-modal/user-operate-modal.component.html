@@ -1,0 +1,28 @@
+<form nz-form [formGroup]="userOperateForm">
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="username" nzRequired>用户名</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" nzHasFeedback>
+      <input nz-input formControlName="username" id="name" placeholder="请输入..." autocomplete="new-password" />
+      <ng-container *ngIf="userOperateForm.get('username') as username" ngProjectAs="nz-form-explain">
+        <nz-form-explain *ngIf="username.errors || username.pending">
+        </nz-form-explain>
+      </ng-container>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">E-mail</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24">
+      <input nz-input formControlName="email" id="email" autocomplete="new-password"/>
+      <nz-form-explain *ngIf="userOperateForm.get('email')?.dirty && userOperateForm.get('email')?.errors">
+        The input is not valid E-mail!
+      </nz-form-explain>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="password" nzRequired>Password</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24">
+      <input nz-input type="password" id="password" formControlName="password" autocomplete="new-password"/>
+      <nz-form-explain *ngIf="userOperateForm.get('password')?.dirty && userOperateForm.get('password')?.errors">Please input your password!</nz-form-explain>
+    </nz-form-control>
+  </nz-form-item>
+</form>

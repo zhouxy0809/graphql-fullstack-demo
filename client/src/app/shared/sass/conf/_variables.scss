@@ -1,0 +1,93 @@
+//default font
+$font-family: "Roboto",
+sans-serif;
+$default: #FFF;
+// $body-bg: $default;
+// $modal-default: #999999; //modal font-size color
+$default-error: #F00; //modal font-size color
+$default-text: #000;
+// $default-bg-text: #fff;
+// $content-text: $default-text;
+$container-bg-color: rgba(248, 249, 249, 1);
+// font size
+$font-content-top: 24px;
+$font-content-top-breadcrumb: 18px;
+$font-title: 18px;
+$font-text: 16px;
+// $font-sm-text: 14px;
+// $font-modal-title: 28px; //size
+// $font-modal-close: 36px; //size
+// $font-thin: 100;
+// $font-light: 300;
+// $font-normal: 400;
+// $font-bold: 700;
+// $font-bolder: 500;
+// $font-ultraBold: 900;
+//size
+$resXXL: 1280px;
+$resXL: 1170px;
+$resL: 991px;
+$resM: 768px;
+$resS: 660px;
+$resXS: 500px;
+$resXXS: 435px;
+$resMin: 320px;
+// color
+$primary: #2C9CFA !default;
+$primary-hover: #5CB9FF !default;
+$primary-focus: #2171C5 !default;
+$primary-disabled: #CCC !default;
+$divider: #E5E5E5 !default;
+$warning: #FFBB03 !default;
+$input-box-shadow: transparent($primary, 0.2);
+$input-background-disabled: transparent(#000, 0.04);
+$input-disabled: #f5f5f5;
+$grey-font: #999;
+//button
+$startup-primary: #5CC45F;
+$startup-hover: transparent($startup-primary, 0.898);
+$startup-focus: #44a246;
+//stop-button
+$stop-primary: #999;
+$stop-hover: #2B465C;
+$stop-focus: #1e2a34;
+//layout
+$page-header-height: 50px;
+$page-header-background-color: rgba(28, 41, 85, 1);
+$page-header-dropdown-font-color: #f5f5f5;
+$page-footer-height: 0px;
+$page-footer-color: $default;
+//page-top
+$top-height: 50px;
+//sidebar
+$sidebar-width: 160px;
+$sidebar: rgb(44, 156, 250);
+$sidebar-text: #ffffff;
+$sidebar-padding-left: 24px;
+$sidebar-menu-item-height: 40px;
+$main-grey-background:#F8F9F9;
+
+// form
+$form-control-disabled: #F5F5F5;
+
+//resource-info
+$resource-info-0: #40CEAD;
+$resource-info-1: #5DC560;
+$resource-info-2: #1E90FF;
+$resource-info-3: #51BDF2;
+// file-system
+$file-item-hover: #e6f7ff;
+
+// button
+$button-gutter: 20px;
+$custom-startup-button-background: #11CC77;
+$custom-startup-button-disabled-background: #BBB;
+$custom-stop-button-background: #666;
+
+// table
+$table-th-height: 48px;
+$table-td-height: 48px;
+$table-th-font-size: 13px;
+$table-td-font-size: 13px;
+$table-th-font-color: #3C3E4A;
+$table-td-font-color: #3C3E4A;

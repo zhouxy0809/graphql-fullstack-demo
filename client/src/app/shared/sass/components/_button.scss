@@ -1,0 +1,127 @@
+@import '../conf/conf';
+
+
+.ant-btn-round {
+  padding: 0 32px;
+  font-size: 12px;
+
+  .anticon-minus-circle,
+  .anticon-check-circle {
+    font-size: 14px;
+  }
+}
+
+.ant-btn>span {
+  vertical-align: text-bottom;
+}
+
+.ant-btn>.anticon+span,
+.ant-btn>span+.anticon {
+  margin-left: 4px;
+}
+
+.startup-button,
+.ant-btn-startup-button {
+  color: $default !important;
+  background-color: $startup-primary !important;
+  border-color: $startup-primary !important;
+
+  &:hover {
+    background-color: $startup-hover !important;
+    border-color: $startup-hover !important;
+  }
+
+  &:active {
+    background-color: $startup-focus !important;
+    border-color: $startup-focus !important;
+  }
+
+  &:visited {
+    background-color: $startup-primary !important;
+    border-color: $startup-primary !important;
+  }
+
+  &:disabled {
+    background-color: $primary-disabled !important;
+    border-color: $primary-disabled !important;
+  }
+}
+
+.ant-btn-primary {
+  color: $default !important;
+  background-color: $primary !important;
+  border-color: $primary !important;
+
+  &:hover {
+    background-color: $primary-hover !important;
+    border-color: $primary-hover !important;
+  }
+
+  &:active {
+    background-color: $primary-focus !important;
+    border-color: $primary-focus !important;
+  }
+
+  &:visited {
+    background-color: $primary !important;
+    border-color: $primary !important;
+  }
+
+  &:disabled {
+    background-color: $primary-disabled !important;
+    border-color: $primary-disabled !important;
+  }
+}
+
+.add-parameter-button,
+.ant-btn-add-parameter-button {
+  color: $primary !important;
+  background-color: $default !important;
+  border-color: $primary !important;
+
+  &:hover {
+    color: $primary-hover !important;
+    border-color: $primary-hover !important;
+  }
+
+  &:active {
+    color: $primary-focus !important;
+    border-color: $primary-focus !important;
+  }
+
+  &:visited {
+    color: $primary !important;
+    border-color: $primary !important;
+  }
+
+  &:disabled {
+    color: $primary-disabled !important;
+    border-color: $primary-disabled !important;
+  }
+}
+
+.stop-btn {
+  color: $default !important;
+  background-color: $stop-primary !important;
+  border-color: $stop-primary !important;
+
+  &:hover {
+    background-color: $stop-hover !important;
+    border-color: $stop-hover !important;
+  }
+
+  &:active {
+    background-color: $stop-focus !important;
+    border-color: $stop-focus !important;
+  }
+
+  &:visited {
+    background-color: $stop-primary !important;
+    border-color: $stop-primary !important;
+  }
+
+  &:disabled {
+    background-color: $stop-primary !important;
+    border-color: $stop-primary !important;
+  }
+}

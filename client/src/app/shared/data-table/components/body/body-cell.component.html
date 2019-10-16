@@ -1,0 +1,71 @@
+<!-- 自定义模板 -->
+<ng-template #render 
+  [ngTemplateOutlet]="column._render"
+  [ngTemplateOutletContext]="{$implicit: row, column: column}">
+</ng-template>
+<!-- 内置类型 -->
+<ng-container *ngIf="isNullOrUndefined(column._render); else render">
+  <ng-container [ngSwitch]="column.type">
+    <!-- index type -->
+    <ng-container *ngSwitchCase="'index'">
+      {{rowIndex}}
+    </ng-container>
+    <!-- link type -->
+    <ng-container *ngSwitchCase="'link'">
+      <nz-tooltip [nzTitle]="value" [nzPlacement]="'topLeft'">
+        <a nz-tooltip href="javascript:void(0)" (click)="column.routerLinkFn(row)">{{value}}</a>
+      </nz-tooltip>
+    </ng-container>
+    <!-- boolean type-->
+    <ng-container *ngSwitchCase="'boolean'">
+      <nz-switch [(ngModel)]="value" [nzDisabled]="column.disabled" nzCheckedChildren="开" nzUnCheckedChildren="关">
+      </nz-switch>
+    </ng-container>
+    <!-- text type -->
+    <ng-container *ngSwitchCase="'text'">
+      <nz-tooltip [nzTitle]="value" [nzPlacement]="'topLeft'">
+        <span nz-tooltip>{{value}}</span>
+      </nz-tooltip>
+    </ng-container>
+    <!-- input type -->
+    <ng-container *ngSwitchCase="'input'">
+      <input nz-input type="text" [(ngModel)]="row[column.name]" disabled="column.inputDisabled(row)">
+    </ng-container>
+    <!-- single select type -->
+    <ng-container *ngSwitchCase="'singleSelect'">
+      <nz-select [(ngModel)]="value">
+        <nz-option *ngFor="let option of column.selectTypeOptions.options"
+          [nzValue]="option[column.selectTypeOptions.value]" [nzLabel]="option[column.selectTypeOptions.label]">
+        </nz-option>
+      </nz-select>
+    </ng-container>
+    <!-- multiple select type -->
+    <ng-container *ngSwitchCase="'multiSelect'">
+      <nz-select [(ngModel)]="row[column.name]" nzMode="multiple">
+        <nz-option *ngFor="let option of column.selectTypeOptions.options"
+          [nzValue]="option[column.selectTypeOptions.value]" [nzLabel]="option[column.selectTypeOptions.label]">
+        </nz-option>
+      </nz-select>
+    </ng-container>
+    <!-- tag type -->
+    <ng-container *ngSwitchCase="'tag'">
+      <nz-tag [nzColor]="isDefinedFunction(column.tagColorFn) && column.tagColorFn(value) || '#2db7f5'">
+        <nz-tooltip [nzTitle]="value" [nzPlacement]="'topLeft'">
+          <span nz-tooltip>{{value}}</span>
+        </nz-tooltip>
+      </nz-tag>
+    </ng-container>
+    <ng-container *ngSwitchCase="'badge'">
+      <nz-badge
+        nzStatus="default"
+        [nzStyle]="{'background-color': column.badge[value]['color']}"
+        [nzText]="column.badge[value]['text']"></nz-badge>
+    </ng-container>
+    <!-- time type -->                                                                          
+    <ng-container *ngSwitchCase="'time'">
+      <nz-tooltip [nzTitle]="value | date:'yyyy-MM-dd HH:mm'" [nzPlacement]="'topLeft'">
+        <span nz-tooltip>{{value | date:'yyyy-MM-dd HH:mm'}}</span>
+      </nz-tooltip>
+    </ng-container>
+  </ng-container>
+</ng-container>

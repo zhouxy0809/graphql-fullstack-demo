@@ -1,0 +1,23 @@
+.data-table-footer {
+  padding: 24px 0;
+  .total,
+  .pageSize,
+  .pagination {
+    display: inline-block;
+  }
+  .pageSize {
+    padding-left: 16px;
+    .pageSizeSelect {
+      margin: 0 8px;
+    }
+  }
+  .pagination {
+    float: right;
+    button {
+      margin-right: 8px;
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+}

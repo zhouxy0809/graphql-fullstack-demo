@@ -1,0 +1,30 @@
+{
+  "introspectionQueryResultData": {
+    "__schema": {
+      "types": [{
+        "kind": "INTERFACE",
+        "name": "Type",
+        "possibleTypes": [
+          {
+            "name": "BaseType"
+          },
+          {
+            "name": "EnumType"
+          },
+          {
+            "name": "StructType"
+          },
+          {
+            "name": "ArrayType"
+          },
+          {
+            "name": "MapType"
+          },
+          {
+            "name": "UnionType"
+          }
+        ]
+      }]
+    }
+  }
+}
